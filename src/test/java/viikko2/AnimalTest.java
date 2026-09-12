@@ -1,5 +1,9 @@
 import org.junit.jupiter.api.*;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
 
 public class AnimalTest {
     // Write your tests here.
@@ -30,4 +34,27 @@ public class AnimalTest {
         String actual = animal.shout();
         assertEquals(expected, actual);
      }
+
+      @Test
+     public void testAnimalInvalidAge(){
+        Animal animal = new Animal("nimi", 10);
+        int expected = 10;
+        int actual = animal.getAge();
+
+        if (actual < 0) {
+            actual = 0;
+        }
+        assertEquals(expected, actual);
+
+     }
+
+     @Test
+        public void testAnimalInvalidName(){
+        String name = null;
+        Animal animal = new Animal(name, 10);
+        String expected = "Undefined";
+        String actual = animal.getName();
+        assertEquals(expected, actual);
+    
+        }
 }
