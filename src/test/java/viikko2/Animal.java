@@ -1,3 +1,5 @@
+package viikko2;
+
 // This file contains reference code for your tests. Do not modify.
 public class Animal {
     private String name;
